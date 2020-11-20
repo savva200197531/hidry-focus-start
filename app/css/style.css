@@ -1,7 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
+:root {
+    --main-orange-color: #FBBA3C;
+    --light-gray-color: #F9F9F9;
+    --dark-gray-color: #F2F2F2;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6, p, span, li, ul, a, button {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+ul, li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+input {
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.button-orange {
+    background: var(--main-orange-color);
+    border: 1px solid var(--main-orange-color);
+}
+
+.button-gray {
+    background: transparent;
+    border: 1px solid var(--light-gray-color);
+}
+
+.input-gray {
+    background: #fff;
+    border: 1px solid #C4C4C4;
+}
+
+.checkbox {
+    position: relative;
+    display: none;
+}
+
+.checkbox-label {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url("../assets/img/checkbox-not-checked.svg") no-repeat center;
+    position: relative;
+}
+
+.checkbox:checked + .checkbox-label:before {
+    position: absolute;
+    content: '';
+    background: url("../assets/img/checkbox-checked.svg") no-repeat center;
+    width: 24px;
+    height: 24px;
+}
+
+.radio {
+    position: relative;
+    display: none;
+}
+
+.radio-label {
+    position: relative;
+    cursor: pointer;
+}
+
+.radio + .radio-label:before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--main-orange-color);
+    border-radius: 50%;
+    background: transparent;
+}
+
+.radio:checked + .radio-label:before
+{
+    transition: 0.2s ease;
+    background: var(--main-orange-color);
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+
