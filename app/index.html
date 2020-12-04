@@ -5,25 +5,233 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-page.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Hidry</title>
 </head>
 <body>
-<h1>Hello</h1>
-<button class="button-orange">Click me</button>
-<input type="text" class="input-gray">
-
-<input type="checkbox" class="checkbox" id="test-checkbox1">
-<label class="checkbox-label" for="test-checkbox1"></label>
-
-<div class="radios">
-    <input type="radio" name="test-radio1" id="test-radio1" class="radio">
-    <label for="test-radio1" class="radio-label"></label>
-    <input type="radio" name="test-radio1" id="test-radio2" class="radio">
-    <label for="test-radio2" class="radio-label"></label>
-    <input type="radio" name="test-radio1" id="test-radio3" class="radio">
-    <label for="test-radio3" class="radio-label"></label>
-</div>
+<header class="header">
+    <div class="header-wrapper">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#"><img class="logo__img" src="assets/img/logo.svg" alt="logo"></a>
+                </div>
+                <label for="catalog" class="button button-orange catalog-checkbox__wrapper">
+                    <input type="checkbox" id="catalog" class="catalog-checkbox">
+                    <label for="catalog" class="catalog-checkbox__label">
+                        <span class="catalog-checkbox__label-line"></span>
+                        <span class="catalog-checkbox__label-line"></span>
+                        <span class="catalog-checkbox__label-line"></span>
+                    </label>
+                    <span class="catalog-checkbox__text">Каталог</span>
+                </label>
+                <div class="site-search">
+                    <input placeholder="Хочу найти" type="text" class="site-search__input" id="search">
+                    <label for="search" class="site-search__label">
+                        <button class="button button-orange site-search__button">Найти</button>
+                    </label>
+                </div>
+                <nav class="nav-header">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                <svg class="nav__img">
+                                    <use xlink:href="assets/img/nav.svg#cards"></use>
+                                </svg>
+                                <h5>Бонусы</h5>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                <svg class="nav__img">
+                                    <use xlink:href="assets/img/nav.svg#box"></use>
+                                </svg>
+                                <h5>Заказы</h5>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                <svg class="nav__img">
+                                    <use xlink:href="assets/img/nav.svg#percent"></use>
+                                </svg>
+                                <h5>Акции</h5>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                <svg class="nav__img">
+                                    <use xlink:href="assets/img/nav.svg#house"></use>
+                                </svg>
+                                <h5>Корзина (5)</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="separator-section">
+    <div class="separator-wrapper">
+        <div class="separator-content">
+            <div class="separator-left">
+                <a href="#" class="separator__link">
+                    <h3 class="separator__title">Собачки</h3>
+                </a>
+            </div>
+            <div class="separator-right">
+                <a href="#" class="separator__link">
+                    <h3 class="separator__title">Котики</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="animals-section">
+    <div class="animals-wrapper">
+        <div class="container">
+            <div class="animals-content">
+                <div class="filters-wrapper">
+                    <div class="filters-title">
+                        <h3>Фильтр</h3>
+                    </div>
+                    <div class="filters">
+                        <div class="filter-block">
+                            <div class="filter-block__title-wrapper">
+                                <h4 class="filter-block__title">Тип</h4>
+                            </div>
+                            <div class="filter-block__controls">
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-type1" class="filter-block__checkbox checkbox">
+                                    <label for="control-type1" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-type2" class="filter-block__checkbox checkbox">
+                                    <label for="control-type2" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-type3" class="filter-block__checkbox checkbox">
+                                    <label for="control-type3" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-type4" class="filter-block__checkbox checkbox">
+                                    <label for="control-type4" class="filter-block__label checkbox-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-block">
+                            <div class="filter-block__title-wrapper">
+                                <h4 class="filter-block__title">Тип</h4>
+                            </div>
+                            <div class="filter-block__controls">
+                                <div class="filter-block__search-wrapper">
+                                    <input type="search" id="search-traits" placeholder="Быстрый поиск"
+                                           class="filter-block__search input-transparent">
+                                    <label for="search-traits" class="filter-block__search-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-traits1" class="filter-block__checkbox checkbox">
+                                    <label for="control-type1" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-traits2" class="filter-block__checkbox checkbox">
+                                    <label for="control-type2" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-traits3" class="filter-block__checkbox checkbox">
+                                    <label for="control-type3" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <div class="filter-block__controls-wrapper">
+                                    <input type="checkbox" id="control-traits4" class="filter-block__checkbox checkbox">
+                                    <label for="control-type4" class="filter-block__label checkbox-label"></label>
+                                </div>
+                                <a class="filter-block__links" href="#">
+                                    <span class="filter-block__links-show"></span>
+                                    <span class="filter-block__links-hide"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="filter-block">
+                            <div class="filter-block__title-wrapper">
+                                <h4 class="filter-block__title">Тип</h4>
+                            </div>
+                            <div class="filter-block__controls">
+                                <div class="filter-block__controls-wrapper">
+                                    <span class="search-range">от</span>
+                                    <input type="text" placeholder="от" class="range-input input-transparent">
+                                    <span class="search-range">до</span>
+                                    <input type="text" placeholder="до" class="range-input input-transparent">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card__img-wrapper">
+                            <div>
+                                <img src="assets/img/dog-card-img.svg" alt="dog" class="card__img">
+                            </div>
+                        </div>
+                        <div class="card__content">
+                            <h4 class="card__title">Айну</h4>
+                            <p class="card__price">12 000₽</p>
+                            <button class="card__button button-orange">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img-wrapper">
+                            <div>
+                                <img src="assets/img/dog-card-img.svg" alt="dog" class="card__img">
+                            </div>
+                        </div>
+                        <div class="card__content">
+                            <h4 class="card__title">Айну</h4>
+                            <p class="card__price">12 000₽</p>
+                            <button class="card__button button-orange">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img-wrapper">
+                            <div>
+                                <img src="assets/img/dog-card-img.svg" alt="dog" class="card__img">
+                            </div>
+                        </div>
+                        <div class="card__content">
+                            <h4 class="card__title">Айну</h4>
+                            <p class="card__price">12 000₽</p>
+                            <button class="card__button button-orange">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img-wrapper">
+                            <div>
+                                <img src="assets/img/dog-card-img.svg" alt="dog" class="card__img">
+                            </div>
+                        </div>
+                        <div class="card__content">
+                            <h4 class="card__title">Айну</h4>
+                            <p class="card__price">12 000₽</p>
+                            <button class="card__button button-orange">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img-wrapper">
+                            <div>
+                                <img src="assets/img/dog-card-img.svg" alt="dog" class="card__img">
+                            </div>
+                        </div>
+                        <div class="card__content">
+                            <h4 class="card__title">Айну</h4>
+                            <p class="card__price">12 000₽</p>
+                            <button class="card__button button-orange">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
