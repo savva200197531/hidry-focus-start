@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/order-page.css">
+    <link rel="stylesheet" href="css/card-page.css">
     <link rel="stylesheet" href="css/general-elements.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Hidry</title>
@@ -89,83 +89,66 @@
         <div class="container">
             <div class="breadcrumbs-content">
                 <div class="breadcrumbs-links__wrapper">
-                    <a href="#" class="breadcrumbs-link">Каталог товаров / Собачки</a>
+                    <a href="#" class="breadcrumbs-link">Каталог товаров / Собачки / Айну</a>
                 </div>
                 <div class="breadcrumbs-title">
-                    <h1 class="breadcrumbs-title__text">Собачки</h1>
+                    <h1 class="breadcrumbs-title__text">Айну</h1>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="order-section">
-    <div class="order-wrapper">
+<section class="card-page-section">
+    <div class="card-page-wrapper">
         <div class="container">
-            <div class="order-content">
-                <div class="order-top">
-                    <h2 class="order-page-subheader">Получатель</h2>
-                    <div class="form-wrapper">
-                        <p class="form-wrapper__name">Имя</p>
-                        <input class="form-wrapper__input" type="text" value="Владимир">
-                    </div>
-                    <div class="form-wrapper">
-                        <p class="form-wrapper__name">Телефон</p>
-                        <input class="form-wrapper__input" type="tel">
-                    </div>
+            <div class="card-page-content">
+                <div class="card-left">
+                    <img class="card-img" src="assets/img/dog-card-img.svg" alt="dog">
                 </div>
-                <div class="order-middle">
-                    <h2 class="order-page-subheader">Способ доставки</h2>
-                    <div class="wrapper-radio">
-                        <input type="radio" id="1" name="delivery">
-                        <label for="1" class="wrapper-radio__label">
-                            <div class="wrapper-radio__radio"></div>
-                            <p class="wrapper-radio__text">Самовывоз</p>
-                        </label>
+                <div class="card-right">
+                    <div class="card-title">
+                        <h3 class="card-title__text">Характеристика Айну</h3>
                     </div>
-                    <div class="wrapper-radio">
-                        <input type="radio" id="2" name="delivery" checked>
-                        <label for="2" class="wrapper-radio__label">
-                            <div class="wrapper-radio__radio"></div>
-                            <p class="wrapper-radio__text">Курьер</p>
-                        </label>
+
+                    <div class="card-row card-row-gray">
+                        <h6 class="card-row__title">Тип</h6>
+                        <p class="card-row__text">Охотничьи, Компаньоны</p>
                     </div>
-                </div>
-                <div class="order-bottom">
-                    <h2 class="order-page-subheader order-page-subheader__boder"><span>2</span> товара на сумму <span>27
-                        000</span>₽</h2>
-                    <div class="total">
-                        <div class="total__item">
-                            <img class="total__img" src="img/item-img.jpg" alt="">
-                            <p class="total__name">Айну</p>
-                            <p class="total_quantity">1 шт.</p>
-                            <p class="total__price">12 000₽</p>
-                        </div>
-                        <div class="total__item">
-                            <img class="total__img" src="img/item-img.jpg" alt="">
-                            <p class="total__name">Айну</p>
-                            <p class="total_quantity">1 шт.</p>
-                            <p class="total__price">15 000₽</p>
-                        </div>
+                    <div class="card-row">
+                        <h6 class="card-row__title">Размер</h6>
+                        <p class="card-row__text">Средняя (11-25кг)</p>
                     </div>
-                    <div class="final-container">
-                        <div class="final-container__row">
-                            <p class="final-container__name">Сумма заказа</p>
-                            <p class="final-container__value">27 000₽</p>
+                    <div class="card-row card-row-gray">
+                        <h6 class="card-row__title">Основные черты</h6>
+                        <p class="card-row__text">Очень преданная, Дружелюбная,
+                            Подходит для охоты, Мало лает</p>
+                    </div>
+                    <div class="card-row">
+                        <h6 class="card-row__title">Частые заболевания</h6>
+                        <p class="card-row__text">Глухота, Паралич гортани </p>
+                    </div>
+                    <div class="card-row card-row-gray">
+                        <h6 class="card-row__title">Интеллект</h6>
+                        <p class="card-row__text">45%</p>
+                    </div>
+
+                    <div class="card-price">
+                        <h5 class="card-price__title">Стоимость</h5>
+                        <p class="card-price__text">12 000₽</p>
+                    </div>
+                    <div class="card-buttons">
+                        <div class="card-button__left-wrapper">
+                            <button class="card-button__left button button-orange">Забрать</button>
                         </div>
-                        <div class="final-container__row">
-                            <p class="final-container__name">Самовывоз</p>
-                            <p class="final-container__value">0₽</p>
+                        <div class="card-button__right-wrapper">
+                            <button class="card-button__right button button-gray">Добавить в корзину</button>
                         </div>
-                        <div class="final-container__row final-container__row_last">
-                            <p class="final-container__name final-container__name_last">Итого с доставкой</p>
-                            <p class="final-container__value final-container__value_last">27 000₽</p>
-                        </div>
-                        <button class="final-container__button">Создать заказ</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 </body>
 </html>

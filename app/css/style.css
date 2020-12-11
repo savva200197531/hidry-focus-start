@@ -4,6 +4,7 @@
     --main-orange-color: #FBBA3C;
     --light-gray-color: #F9F9F9;
     --dark-gray-color: #F2F2F2;
+    --border-gray-color: #EAEAEA;
 }
 
 *, *:before, *:after {
@@ -37,25 +38,16 @@ a {
     font-size: 14px;
     border-radius: 4px;
     box-sizing: border-box;
+    width: 100%;
 }
 
-.button:hover {
+.hover:hover, .button:hover {
     cursor: pointer;
     opacity: 0.8;
     transition: 0.3s ease;
 }
 
-.button:active {
-    transform: scale(0.95);
-}
-
-.hover:hover {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s ease;
-}
-
-.active:active {
+.active:active, .button:active {
     transform: scale(0.95);
 }
 
@@ -79,7 +71,7 @@ input {
 
 .button-gray {
     background: transparent;
-    border: 1px solid var(--light-gray-color);
+    border: 1px solid var(--border-gray-color);
 }
 
 .input-gray {

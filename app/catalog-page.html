@@ -18,8 +18,15 @@
                 <div class="logo">
                     <a href="#"><img class="logo__img" src="assets/img/logo.svg" alt="logo"></a>
                 </div>
-                <div class="catalog-button__wrapper">
-                    <button class="catalog-button">Каталог</button>
+                <div class="catalog-button__wrapper desktop">
+                    <button class="catalog-button button button-orange">
+                    <span class="catalog-button__lines">
+                        <span class="catalog-button__line"></span>
+                        <span class="catalog-button__line"></span>
+                        <span class="catalog-button__line"></span>
+                    </span>
+                        <span class="catalog-button__text">Каталог</span>
+                    </button>
                 </div>
                 <div class="site-search">
                     <input placeholder="Хочу найти" type="text" class="site-search__input" id="search">
@@ -63,15 +70,16 @@
                         </li>
                     </ul>
                 </nav>
-                <label for="catalog-mobile" class="mobile-header catalog-checkbox__wrapper-mobile button button-orange catalog-checkbox__wrapper">
-                    <input type="checkbox" id="catalog-mobile" class="catalog-checkbox">
-                    <label for="catalog-mobile" class="catalog-checkbox__label">
-                        <span class="catalog-checkbox__label-line"></span>
-                        <span class="catalog-checkbox__label-line"></span>
-                        <span class="catalog-checkbox__label-line"></span>
-                    </label>
-                    <span class="catalog-checkbox__text">Каталог</span>
-                </label>
+                <div class="catalog-button__wrapper mobile">
+                    <button class="catalog-button button button-orange">
+                    <span class="catalog-button__lines">
+                        <span class="catalog-button__line"></span>
+                        <span class="catalog-button__line"></span>
+                        <span class="catalog-button__line"></span>
+                    </span>
+                        <span class="catalog-button__text">Каталог</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -334,7 +342,7 @@
                         </div>
                     </div>
                     <div class="button-wrapper">
-                        <button class="button__show-more button">Показать ещё</button>
+                        <button class="button__show-more button button-gray">Показать ещё</button>
                     </div>
                 </div>
             </div>

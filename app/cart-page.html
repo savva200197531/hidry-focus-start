@@ -11,61 +11,44 @@
     <title>Hidry</title>
 </head>
 <body>
-<div class="cart">
-    <div class="cart__header-wrapper">
-        <h2 class="cart__header">Ваша корзина</h2>
-        <div class="cart__close">
-            <span class="cart__close-line"></span>
-            <span class="cart__close-line"></span>
+<div class="cart-wrapper">
+    <div class="cart">
+        <div class="cart-title">
+            <h3 class="cart-title__text">Ваша корзина</h3>
+            <div class="cart-close">
+                <span class="card-close__line"></span>
+                <span class="card-close__line"></span>
+            </div>
         </div>
+        <div class="cart-top">
+            <div class="cart-checkbox-wrapper">
+                <input type="checkbox" id="cart-checkbox1" class="cart-checkbox checkbox">
+                <label for="cart-checkbox1" class="cart-label checkbox-label"></label>
+                <label for="cart-checkbox1" class="cart-label">Выбрать всё</label>
+            </div>
+        </div>
+        <div class="cart-row">
+            <div class="cart-checkbox-wrapper">
+                <input type="checkbox" id="cart-checkbox2" class="cart-checkbox checkbox">
+                <label for="cart-checkbox2" class="cart-label checkbox-label"></label>
+                <label for="cart-checkbox2" class="cart-label">Выбрать всё</label>
+            </div>
+            <div class="cart-row__img-wrapper">
+                <img src="assets/img/dog-card-img.svg" alt="dog" class="cart-row__img">
+            </div>
+            <div class="cart-row__info">
+                <h5 class="cart-row__text"></h5>
+                <button class="button button-gray">-</button>
+                <span class="card-row__count">1</span>
+                <button class="button button-gray">+</button>
+                <p class="cart-row__price">12 000₽</p>
+
+            </div>
+        </div>
+        <div class="cart-row"></div>
+        <div class="cart-price"></div>
+        <div class="cart-button-wrapper"></div>
     </div>
-    <div class="cart-row-first">
-        <div class="filter-item__checkbox-wrapper">
-            <input class="checkbox filter-item__input" type="checkbox" id="10">
-            <label class="checkbox-label filter-item__label" for="10"></label>
-        </div>
-        <label for="10" class="cart-row-first__text">Выбрать все</label>
-        <div class="cart-row-first__to-left">
-            <p class="cart-row-first__text">Удалить все</p>
-            <img class="active hover bucket" src="assets/img/bucket.svg" alt="bucket">
-        </div>
-    </div>
-    <div class="cart-row">
-        <div class="filter-item__checkbox-wrapper">
-            <input class="checkbox filter-item__input" type="checkbox" id="20">
-            <label class="checkbox-label filter-item__label" for="20"></label>
-        </div>
-        <img class="cart-row__img" width="100" height="79" src="assets/img/dog-card-img.svg" alt="dog">
-        <p class="cart-row__name">Айну</p>
-        <div class="cart-row__wrapper">
-            <button class="button cart-row__button">-</button>
-            <p class="cart-row__quantity">1</p>
-            <button class="button cart-row__button">+</button>
-        </div>
-        <p class="cart-row__price">12 000₽</p>
-        <img class="active hover bucket" src="assets/img/bucket.svg" alt="bucket">
-    </div>
-    <div class="cart-row">
-        <div class="filter-item__checkbox-wrapper">
-            <input class="checkbox filter-item__input" type="checkbox" id="30">
-            <label class="checkbox-label filter-item__label" for="30"></label>
-        </div>
-        <img class="cart-row__img" width="100" height="79" src="assets/img/dog-card-img.svg" alt="dog">
-        <p class="cart-row__name">Айну</p>
-        <div class="cart-row__wrapper">
-            <button class="button cart-row__button">-</button>
-            <p class="cart-row__quantity">1</p>
-            <button class="button cart-row__button">+</button>
-        </div>
-        <p class="cart-row__price">12 000₽</p>
-        <img class="active hover bucket" src="assets/img/bucket.svg" alt="bucket">
-    </div>
-    <div class="cart-total">
-        <p class="cart-total__text"><span>2</span> товара на сумму<span class="cart-total__total-price">27 000₽</span>
-        </p>
-        <button class="cart-total__button button button-orange">Оформить заказ</button>
-    </div>
-</div>
 </div>
 </body>
 </html>
