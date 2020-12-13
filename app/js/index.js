@@ -97,36 +97,36 @@ const dogsData = [
   }
 ]
 
-const allCheckbox = document.querySelectorAll('.filter-block__checkbox');
+const allCheckboxes = document.querySelectorAll('.filter-block__checkbox');
 let cards = document.querySelector('.cards');
 const filtersByType = [];
 const filtersByTraits = [];
 
 const randomInteger = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
-allCheckbox.forEach(checkbox => {
+allCheckboxes.forEach(checkbox => {
   checkbox.addEventListener('click', () => {
     if (checkbox.dataset.typeFilter) {
-      dogFiltersFill(checkbox, filtersByType, 'typeFilter');
-      dogFilter(filtersByType, 'type');
+      itemsFiltersFill(checkbox, filtersByType, 'typeFilter');
+      itemsFilter(filtersByType, 'type');
     } else {
-      dogFiltersFill(checkbox, filtersByTraits, 'traitsFilter');
-      dogFilter(filtersByTraits, 'traits');
+      itemsFiltersFill(checkbox, filtersByTraits, 'traitsFilter');
+      itemsFilter(filtersByTraits, 'traits');
     }
   })
 })
 
-const dogFilter = (filterBy, filter) => {
+const itemsFilter = (filterBy, filter) => {
   const result = dogsData.filter(dog => filterBy.some(by => dog[filter].includes(by)));
-  if (result.length > 0) dogIterator(result); else dogIterator(dogsData);
+  if (result.length > 0) itemsIterator(result); else itemsIterator(dogsData);
 }
 
-const dogFiltersFill = (checkbox, filterBy, filter) =>
+const itemsFiltersFill = (checkbox, filterBy, filter) =>
   checkbox.checked
     ? filterBy.push(checkbox.dataset[filter])
     : filterBy.splice(filterBy.indexOf(checkbox.dataset[filter]), 1);
 
-const dogIterator = (data) => {
+const itemsIterator = (data) => {
   cards.innerHTML = '';
   const cardTemplate = document.querySelector('.card-template');
   const content = cardTemplate.content;
@@ -141,5 +141,5 @@ const dogIterator = (data) => {
   }
 }
 
-dogIterator(dogsData)
+itemsIterator(dogsData)
 

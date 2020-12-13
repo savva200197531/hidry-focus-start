@@ -1,0 +1,131 @@
+.cart-wrapper {
+    max-width: 660px;
+    width: 100%;
+}
+
+.cart {
+    padding: 24px 40px 0 40px;
+}
+
+.cart-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-title__text {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.cart-close {
+    height: 14px;
+    width: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-close__line {
+    width: 18px;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.card-close__line:first-child {
+    transform: rotate(45deg);
+}
+
+.card-close__line:last-child {
+    transform: rotate(-45deg);
+}
+
+.cart-top {
+    margin-top: 26px;
+    padding-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.cart-checkbox-wrapper, .cart-top__delete-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.cart-label__text, .cart-top__bucket {
+    margin-left: 14px;
+}
+
+.cart-label__text, .cart-top__delete, .cart-price__text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.cart-row {
+    padding: 14px 0;
+    display: grid;
+    grid-gap: 14px;
+    grid-template-columns: 24px 100px 1fr auto;
+    align-items: center;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.cart-row__info, .cart-row__info, .cart-row__price-wrapper, .cart-row__button {
+    display: flex;
+    align-items: center;
+}
+
+.cart-row__text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 14px;
+}
+
+.card-row__count {
+    padding: 0 12px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.cart-row__img {
+    max-width: 100px;
+}
+
+.cart-row__button {
+    width: 24px;
+}
+
+.cart-row__button button {
+    height: 24px;
+}
+
+.cart-row__bucket {
+    margin-left: 14px;
+}
+
+.cart-row__price, .cart-price__price {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.cart-price {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.cart-price__price {
+    margin-left: 8px;
+}
+
+.cart-button-wrapper {
+    max-width: 162px;
+    margin: 24px auto 0 auto;
+}
+
+.checkout-button {
+    height: 37px;
+}
