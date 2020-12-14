@@ -57,6 +57,7 @@ input {
     font-weight: 400;
     font-size: 16px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .container {
@@ -113,8 +114,8 @@ input {
 
 .radio-label {
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     display: block;
     position: relative;
 }

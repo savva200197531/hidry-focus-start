@@ -104,13 +104,17 @@
             <form class="order-form">
                 <div class="order-form__recipient">
                     <h3 class="order-form__title">Получатель</h3>
-                    <div class="order-form__name">
+                    <div class="order-form__row">
                         <label for="name" class="form-label">Имя</label>
-                        <input placeholder="Владимир" type="text" class="form-input input-gray" id="name">
+                        <div class="form-input__wrapper">
+                            <input placeholder="Владимир" type="text" class="form-input input-gray" id="name">
+                        </div>
                     </div>
-                    <div class="order-form__name">
+                    <div class="order-form__row">
                         <label for="tel" class="form-label">Телефон</label>
-                        <input placeholder="+0 000-000-00-00" type="text" class="form-input input-gray" id="tel">
+                        <div class="form-input__wrapper">
+                            <input placeholder="+0 000-000-00-00" type="text" class="form-input input-gray" id="tel">
+                        </div>
                     </div>
                 </div>
                 <div class="order-form__delivery">
@@ -118,37 +122,53 @@
                     <div class="order-form__radio-wrapper">
                         <input type="radio" class="radio" name="delivery" id="delivery1">
                         <label for="delivery1" class="radio-label"></label>
-                        <label for="delivery1" class="order-form__radio-text">Самовывоз</label>
+                        <label for="delivery1" class="order-form__radio-text hover">Самовывоз</label>
                     </div>
                     <div class="order-form__radio-wrapper">
                         <input type="radio" class="radio" name="delivery" id="delivery2">
                         <label for="delivery2" class="radio-label"></label>
-                        <label for="delivery2" class="order-form__radio-text">Курьер</label>
+                        <label for="delivery2" class="order-form__radio-text hover">Курьер</label>
                     </div>
                 </div>
                 <div class="order-form__bottom">
                     <h3 class="order-form__title">2 товара на сумму 27 000₽</h3>
                 </div>
-                <div class="product">
-                    <div class="product__img-wrapper">
-                        <img src="assets/img/dog-card1-img.svg" alt="dog" class="product__img">
+                <div class="products">
+                    <div class="product">
+                        <div class="product__img-wrapper">
+                            <img src="assets/img/dog-card1-img.svg" alt="dog" class="product__img">
+                        </div>
+                        <h5 class="product-name">Айну</h5>
+                        <div class="product-cash">
+                            <span class="product-cash__count">1 шт.</span>
+                            <p class="product-cash__price">12 000₽</p>
+                        </div>
                     </div>
-                    <h5 class="product-name">Айну</h5>
-                    <span class="product-count">1 шт.</span>
-                    <p class="product-price">12 000₽</p>
+                    <div class="product">
+                        <div class="product__img-wrapper">
+                            <img src="assets/img/dog-card1-img.svg" alt="dog" class="product__img">
+                        </div>
+                        <h5 class="product-name">Айну</h5>
+                        <div class="product-cash">
+                            <span class="product-cash__count">1 шт.</span>
+                            <p class="product-cash__price">12 000₽</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="price">
-                    <div class="price-row">
-                        <h4 class="price-row__left">Сумма заказа</h4>
-                        <p class="price-row__right">27 000₽</p>
-                    </div>
-                    <div class="price-row">
-                        <h4 class="price-row__left">Самовывоз</h4>
-                        <p class="price-row__right">0₽</p>
-                    </div>
-                    <div class="price-total">
-                        <h3 class="price-total__left">Итого с доставкой</h3>
-                        <p class="price-total__right">27 000₽</p>
+                    <div class="price-wrapper">
+                        <div class="price-row">
+                            <h4 class="price-row__left">Сумма заказа</h4>
+                            <p class="price-row__right">27 000₽</p>
+                        </div>
+                        <div class="price-row">
+                            <h4 class="price-row__left">Самовывоз</h4>
+                            <p class="price-row__right">0₽</p>
+                        </div>
+                        <div class="price-total">
+                            <h3 class="price-total__left">Итого с доставкой</h3>
+                            <p class="price-total__right">27 000₽</p>
+                        </div>
                     </div>
                     <div class="order-button__wrapper">
                         <button class="order-button button button-orange">Создать заказ</button>

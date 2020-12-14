@@ -2,4 +2,144 @@
     background: var(--light-gray-color);
 }
 
+.order-form {
+    max-width: 820px;
+    width: 100%;
+}
+
+.order-form__title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.product-cash__price, .price-total__left, .price-total__right {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.price-row__right {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.form-label, .order-form__radio-text, .product-name, .product-cash__count, .price-row__left, .form-input {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.order-form__recipient {
+    max-width: 50%;
+    padding: 24px 0 30px 0;
+}
+
+.order-form__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.order-form__row:not(:nth-child(2)) {
+    margin-top: 14px;
+}
+
+.form-input {
+    height: 45px;
+    padding-left: 14px;
+}
+
+.form-input__wrapper {
+    max-width: 272px;
+    width: 100%;
+}
+
+.order-form__delivery {
+    padding-bottom: 30px;
+}
+
+.order-form__radio-wrapper {
+    display: flex;
+    margin-top: 20px;
+}
+
+.order-form__radio-wrapper:not(:nth-child(2)) {
+    margin-top: 26px;
+}
+
+.order-form__radio-text {
+    margin-left: 12px;
+}
+
+.order-form__bottom {
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 10px;
+}
+
+.products {
+    padding-top: calc(30px - 14px);
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr;
+    align-items: center;
+    grid-gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.product__img-wrapper {
+    max-width: 100px;
+}
+
+.product__img {
+    width: 100%;
+}
+
+.product-cash {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price {
+    max-width: 300px;
+    width: 100%;
+}
+
+.price-wrapper {
+    padding: calc(30px - 13px) 0 calc(30px - 13px) 0;
+}
+
+.price-row, .price-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+}
+
+.price-row {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.order-button__wrapper {
+    padding-bottom: 34px;
+}
+
+.order-button {
+    height: 37px;
+}
+
+@media screen and (max-width: 1080px ) {
+    .order-form {
+        padding: 0 24px;
+    }
+}
+
+@media screen and (max-width: 640px ) {
+    .order-form {
+        padding: 0 18px;
+    }
+}
+
 
