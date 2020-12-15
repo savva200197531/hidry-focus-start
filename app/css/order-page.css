@@ -134,11 +134,25 @@
     .order-form {
         padding: 0 24px;
     }
+
+
 }
 
 @media screen and (max-width: 640px ) {
     .order-form {
         padding: 0 18px;
+    }
+
+    .form-input__wrapper {
+        max-width: 190px;
+    }
+
+    .order-form__recipient {
+        max-width: 100%;
+    }
+
+    .breadcrumbs-title__text {
+        font-size: 24px;
     }
 }
 

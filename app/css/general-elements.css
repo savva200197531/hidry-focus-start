@@ -448,6 +448,10 @@
         padding: 14px 18px 16px 18px;
     }
 
+    .breadcrumbs-links__wrapper {
+        display: none;
+    }
+
     .header-content {
         grid-gap: 14px;
         padding: 0 18px 0 18px;

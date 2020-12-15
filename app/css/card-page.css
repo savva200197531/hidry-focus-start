@@ -123,4 +123,21 @@
     .card-row {
         padding: 8px 20px;
     }
+
+    .card-price {
+        padding: 0 20px;
+    }
+
+    .card-row__text {
+        font-size: 14px;
+    }
+
+    .card-buttons {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .card-button__right {
+        margin-left: 0;
+    }
 }
