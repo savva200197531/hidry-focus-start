@@ -285,6 +285,7 @@
 .card {
     border: 1px solid var(--border-gray-color);
     border-radius: 4px;
+    color: #000;
 }
 
 .card:hover .card__title {
