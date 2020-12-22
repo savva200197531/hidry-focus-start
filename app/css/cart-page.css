@@ -1,10 +1,30 @@
 .cart-wrapper {
-    max-width: 660px;
-    width: 100%;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    backdrop-filter: blur(1px) brightness(75%);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .cart {
     padding: 24px 40px 0 40px;
+    background: var(--light-gray-color);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    transition: max-width 1s ease, opacity 1s ease;
+    max-width: 0;
+    opacity: 0;
+}
+
+.cart-open-animation {
+    max-width: 660px;
+    opacity: 1;
 }
 
 .cart-title {

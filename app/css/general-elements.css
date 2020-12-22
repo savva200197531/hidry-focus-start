@@ -220,6 +220,7 @@
     margin-top: 8px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .filter-block__links-wrapper {
@@ -387,6 +388,10 @@
 
 .desktop {
     display: block;
+}
+
+.cart-opened {
+    overflow-y: hidden;
 }
 
 @media screen and (max-width: 1080px) {

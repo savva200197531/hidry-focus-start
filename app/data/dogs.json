@@ -1,98 +1,182 @@
 [
   {
     "id": "1",
-    "img": "1",
+    "img": "assets/img/dog-card1-img.svg",
     "name": "Айну",
     "price": "12 000",
     "type": "hunting",
-    "traits": "noFear"
+    "traits": "noFear",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "2",
-    "img": "2",
+    "img": "assets/img/dog-card2-img.svg",
     "name": "Афганская борзая",
     "price": "15 000",
     "type": "hunting",
-    "traits": "shedsLil"
+    "traits": "shedsLil",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "3",
-    "img": "3",
+    "img": "assets/img/dog-card3-img.svg",
     "name": "Барбет",
     "price": "50 000",
     "type": "companions",
-    "traits": "noFear"
+    "traits": "noFear",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "4",
-    "img": "4",
+    "img": "assets/img/dog-card4-img.svg",
     "name": "Бассет",
     "price": "10 000",
     "type": "hunting",
-    "traits": "shedsLil"
+    "traits": "shedsLil",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "5",
-    "img": "5",
+    "img": "assets/img/dog-card5-img.svg",
     "name": "Легавой",
     "price": "39 000",
     "type": "companions",
-    "traits": "shedsLil"
+    "traits": "shedsLil",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "6",
-    "img": "6",
+    "img": "assets/img/dog-card6-img.svg",
     "name": "Веттерхун",
     "price": "12 000",
     "type": "companions",
-    "traits": "noFear"
+    "traits": "noFear",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "7",
-    "img": "7",
+    "img": "assets/img/dog-card7-img.svg",
     "name": "Древера",
     "price": "17 000",
     "type": "decorative",
-    "traits": "health"
+    "traits": "health",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "8",
-    "img": "8",
+    "img": "assets/img/dog-card8-img.svg",
     "name": "Ирландский терьер",
     "price": "15 000",
     "type": "service",
-    "traits": "obedience"
+    "traits": "obedience",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "9",
-    "img": "9",
+    "img": "assets/img/dog-card9-img.svg",
     "name": "Амереканский кокер",
     "price": "10 000",
     "type": "decorative",
-    "traits": "health"
+    "traits": "health",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "10",
-    "img": "10",
+    "img": "assets/img/dog-card10-img.svg",
     "name": "Английский Кокер",
     "price": "8 000",
     "type": "decorative",
-    "traits": "health"
+    "traits": "health",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "11",
-    "img": "11",
+    "img": "assets/img/dog-card11-img.svg",
     "name": "Дункер",
     "price": "20 000",
     "type": "service",
-    "traits": "obedience"
+    "traits": "obedience",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   },
   {
     "id": "12",
-    "img": "12",
+    "img": "assets/img/dog-card12-img.svg",
     "name": "Спаниель",
     "price": "5 000",
     "type": "service",
-    "traits": "obedience"
+    "traits": "obedience",
+    "features": {
+      "feature1": "Охотничьи, Компаньоны",
+      "feature2": "Средняя (11-25кг)",
+      "feature3": "Очень преданная, Дружелюбная, Подходит для охоты, Мало лает",
+      "feature4": "Глухота, Паралич гортани",
+      "feature5": "45%"
+    }
   }
 ]

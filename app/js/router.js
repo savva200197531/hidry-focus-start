@@ -1,4 +1,6 @@
 import { mainPage } from "./mainPage.js";
+import { cardPage } from "./cardPage.js";
+import { cartLayer } from "./cartLayer.js";
 
 class Router {
   constructor() {
@@ -20,7 +22,10 @@ class Router {
         mainPage.getData();
         break;
       case '#dog':
-        // loadData.loadCardPage();
+        cardPage.getData();
+        break;
+      case '#cart':
+        cartLayer.getData();
         break;
     }
   }

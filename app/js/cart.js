@@ -1,4 +1,0 @@
-class Cart {
-  constructor() {
-  }
-}
