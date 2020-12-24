@@ -22,11 +22,11 @@ class CardPage {
     const cardPrice = cardContent.querySelector('.card-price__text');
     const cardFeatures = cardContent.querySelectorAll('.card-row__text');
 
-    const cardData = this.data.find(item => item.id === location.hash.split('-')[1]);
+    const cardData = this.data.find(item => item.id === parseInt(location.hash.split('-')[1]));
 
     cardImg.src = cardData.img;
     cardName.textContent = `Характеристика ${cardData.name}`;
-    cardPrice.textContent = `${cardData.price}₽`;
+    cardPrice.textContent = `${cardData.price.toLocaleString()}₽`;
   }
 
 }

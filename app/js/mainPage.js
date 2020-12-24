@@ -75,7 +75,6 @@ class MainPage {
 
   loadMainPage = () => {
     this.cards = document.querySelector('.cards');
-    document.querySelector('.cart-open').addEventListener('click', event => cartLayer.cartOpen(event));
     if (this.cards) {
       this.cards.innerHTML = '';
       const cardTemplate = document.querySelector('.card-template');
@@ -87,15 +86,13 @@ class MainPage {
         cardBody.href = `#dog-${item.id}`
         card.querySelector('.card__img').src = item.img;
         card.querySelector('.card__title').textContent = item.name;
-        card.querySelector('.card__price').textContent = `${item.price}₽`;
+        card.querySelector('.card__price').textContent = `${item.price.toLocaleString()}₽`;
+        card.querySelector('button').addEventListener('click', event => {
+          event.preventDefault();
+          cartLayer.addToCart(item.id, this.allData);
+        })
         this.cards.append(card);
       })
-
-      this.cards.querySelectorAll('button')
-        .forEach(btn => btn.addEventListener('click', event => {
-          event.preventDefault();
-          cartLayer.addToCart('1');
-        }));
     }
   }
 }

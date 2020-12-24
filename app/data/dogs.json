@@ -1,9 +1,9 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "img": "assets/img/dog-card1-img.svg",
     "name": "Айну",
-    "price": "12 000",
+    "price": 12000,
     "type": "hunting",
     "traits": "noFear",
     "features": {
@@ -15,10 +15,10 @@
     }
   },
   {
-    "id": "2",
+    "id": 2,
     "img": "assets/img/dog-card2-img.svg",
     "name": "Афганская борзая",
-    "price": "15 000",
+    "price": 15000,
     "type": "hunting",
     "traits": "shedsLil",
     "features": {
@@ -30,10 +30,10 @@
     }
   },
   {
-    "id": "3",
+    "id": 3,
     "img": "assets/img/dog-card3-img.svg",
     "name": "Барбет",
-    "price": "50 000",
+    "price": 50000,
     "type": "companions",
     "traits": "noFear",
     "features": {
@@ -45,10 +45,10 @@
     }
   },
   {
-    "id": "4",
+    "id": 4,
     "img": "assets/img/dog-card4-img.svg",
     "name": "Бассет",
-    "price": "10 000",
+    "price": 10000,
     "type": "hunting",
     "traits": "shedsLil",
     "features": {
@@ -60,10 +60,10 @@
     }
   },
   {
-    "id": "5",
+    "id": 5,
     "img": "assets/img/dog-card5-img.svg",
     "name": "Легавой",
-    "price": "39 000",
+    "price": 39000,
     "type": "companions",
     "traits": "shedsLil",
     "features": {
@@ -75,10 +75,10 @@
     }
   },
   {
-    "id": "6",
+    "id": 6,
     "img": "assets/img/dog-card6-img.svg",
     "name": "Веттерхун",
-    "price": "12 000",
+    "price": 12000,
     "type": "companions",
     "traits": "noFear",
     "features": {
@@ -90,10 +90,10 @@
     }
   },
   {
-    "id": "7",
+    "id": 7,
     "img": "assets/img/dog-card7-img.svg",
     "name": "Древера",
-    "price": "17 000",
+    "price": 17000,
     "type": "decorative",
     "traits": "health",
     "features": {
@@ -105,10 +105,10 @@
     }
   },
   {
-    "id": "8",
+    "id": 8,
     "img": "assets/img/dog-card8-img.svg",
     "name": "Ирландский терьер",
-    "price": "15 000",
+    "price": 15000,
     "type": "service",
     "traits": "obedience",
     "features": {
@@ -120,10 +120,10 @@
     }
   },
   {
-    "id": "9",
+    "id": 9,
     "img": "assets/img/dog-card9-img.svg",
     "name": "Амереканский кокер",
-    "price": "10 000",
+    "price": 10000,
     "type": "decorative",
     "traits": "health",
     "features": {
@@ -135,10 +135,10 @@
     }
   },
   {
-    "id": "10",
+    "id": 10,
     "img": "assets/img/dog-card10-img.svg",
     "name": "Английский Кокер",
-    "price": "8 000",
+    "price": 8000,
     "type": "decorative",
     "traits": "health",
     "features": {
@@ -150,10 +150,10 @@
     }
   },
   {
-    "id": "11",
+    "id": 11,
     "img": "assets/img/dog-card11-img.svg",
     "name": "Дункер",
-    "price": "20 000",
+    "price": 20000,
     "type": "service",
     "traits": "obedience",
     "features": {
@@ -165,10 +165,10 @@
     }
   },
   {
-    "id": "12",
+    "id": 12,
     "img": "assets/img/dog-card12-img.svg",
     "name": "Спаниель",
-    "price": "5 000",
+    "price": 5000,
     "type": "service",
     "traits": "obedience",
     "features": {

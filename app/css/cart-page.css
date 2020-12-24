@@ -85,6 +85,11 @@
     font-weight: 400;
 }
 
+.cart-products {
+    max-height: calc(100vh - 261px);
+    overflow-y: auto;
+}
+
 .cart-row {
     padding: 14px 0;
     display: grid;
