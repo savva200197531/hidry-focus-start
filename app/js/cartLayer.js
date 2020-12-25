@@ -45,11 +45,16 @@ class CartLayer {
       body.classList.add('cart-opened');
       setTimeout(() => cartBody.classList.add('cart-open-animation'));
 
+      document.querySelector('.breadcrumbs-section').classList.add('hidden');
+      document.querySelector('.header').classList.add('hidden');
+
       cart.addEventListener('click', event => {
         const target = event.target.classList.value
         if (target.includes('cart-wrapper') || target.includes('cart-close')) {
           location.hash = localStorage.getItem('locationHashBefore');
           cartBody.classList.remove('cart-open-animation');
+          document.querySelector('.breadcrumbs-section').classList.remove('hidden');
+          document.querySelector('.header').classList.remove('hidden');
           setTimeout(() => {
             cart.remove();
             body.classList.remove('cart-opened');
@@ -58,31 +63,32 @@ class CartLayer {
       });
 
       body.append(cart);
-
-      const allCheckboxes = cartBody.querySelectorAll('input');
-      allCheckboxes.forEach(element => element.addEventListener('click', event => this.productCheckboxes(event, allCheckboxes)));
-      cartBody.querySelector('.cart-top__delete-wrapper').addEventListener('click', () => this.deleteAllProducts())
+      cartBody.querySelector('.cart-top__delete-wrapper').addEventListener('click', () => this.deleteAllProducts());
     }
 
     this.renderCart();
   }
 
-  productCheckboxes = (event, allCheckboxes) => {
-    if (event.target.id === 'cart-checkbox1') {
-      if (event.target.checked) {
-        this.checkboxCheck(allCheckboxes, true);
-        this.checkboxCount = 4;
+  productCheckboxes = (cartBody) => {
+    cartBody.querySelectorAll('input').forEach(element => element.addEventListener('click', event => {
+      const allCheckboxes = cartBody.querySelectorAll('input');
+      if (event.target.id === 'cart-checkbox-all') {
+        if (event.target.checked) {
+          this.checkboxCheck(allCheckboxes, true);
+          this.checkboxCount = allCheckboxes.length - 1;
+        } else {
+          this.checkboxCheck(allCheckboxes, false);
+          this.checkboxCount = 0;
+        }
       } else {
-        this.checkboxCheck(allCheckboxes, false);
-        this.checkboxCount = 0;
+        if (event.target.checked) this.checkboxCount++;
+        else this.checkboxCount--;
+        if (this.checkboxCount === allCheckboxes.length - 1) this.checkboxCheck(allCheckboxes, true);
+        else if (this.checkboxCount < allCheckboxes.length - 1) allCheckboxes.forEach(checkbox =>
+        {if (checkbox.id === 'cart-checkbox-all') checkbox.checked = false;});
+        else if (this.checkboxCount === 0) this.checkboxCheck(allCheckboxes, false);
       }
-    } else {
-      if (event.target.checked) this.checkboxCount++;
-      else this.checkboxCount--;
-      if (this.checkboxCount === 4) this.checkboxCheck(allCheckboxes, true);
-      else if (this.checkboxCount < 4) allCheckboxes.forEach(checkbox => {if (checkbox.id === 'cart-checkbox1') checkbox.checked = false;});
-      else if (this.checkboxCount === 0) this.checkboxCheck(allCheckboxes, false);
-    }
+    }));
   }
 
   checkboxCheck = (allCheckboxes, bool) => allCheckboxes.forEach(checkbox => checkbox.checked = bool);
@@ -167,6 +173,8 @@ class CartLayer {
       })
       document.querySelector('.cart-price__count').textContent = this.cartDataLength;
       document.querySelector('.cart-price__price').textContent = this.finalPrice;
+      this.checkboxCount = 0;
+      this.productCheckboxes(document.querySelector('.cart'));
     }
   }
 

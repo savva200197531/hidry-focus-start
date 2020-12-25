@@ -21,7 +21,9 @@ class Router {
     templates.forEach(template => {
       const content = template.content;
       const clonedLayout = content.cloneNode(content);
-      if (template.dataset.templateUrl === locationHashFiltered) wrapper.append(clonedLayout);
+      if (locationHashFiltered !== '#cart') {
+        if (template.dataset.templateUrl === locationHashFiltered) wrapper.append(clonedLayout);
+      }
     })
     switch (locationHashFiltered) {
       case '':

@@ -1,23 +1,22 @@
 import { router } from "./router.js";
 import { cartLayer } from "./cartLayer.js";
+import { backlight } from "./backlight.js";
 
-class LoadData {
-}
+class LoadData {}
 
-
-// const randomInteger = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 const loadData = new LoadData();
 
 window.addEventListener('hashchange', () => {
-  console.log('hash change')
   router.renderTemplates();
 })
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('dom loaded');
   router.renderTemplates();
   cartLayer.openCart('modal');
 })
+
+document.querySelector('.switch').addEventListener('click', event =>
+  event.target.checked ? backlight.initBacklight(true) : backlight.initBacklight(false));
 
 export { loadData };
 

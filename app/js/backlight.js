@@ -1,30 +1,35 @@
-const allEls = Array.from(document.querySelectorAll('*'));
+class Backlight {
+  constructor() {
+    this.setColor = '';
+    this.clearColor = '';
+    this.allEls = '';
+  }
 
-let itemFirst;
-let itemSecond;
-let colorFirst;
-let colorSecond;
+  randomInteger = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
-const randomIntegerFirst = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
-const randomIntegerSecond = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
-const randomIntegerThird = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
+  initBacklight = (bool) => {
+    this.allEls = document.querySelectorAll('*');
+    if (bool) {
+      this.setColor = setInterval(() => {
+        const el = this.allEls[Math.floor(Math.random() * this.allEls.length)];
+        const color = `rgb(${this.randomInteger(1, 255)}, ${this.randomInteger(1, 255)}, ${this.randomInteger(1, 255)})`;
+        el.style.border = `1px solid ${color}`;
+      }, 2000);
 
-setInterval(() => {
-  itemFirst = allEls[Math.floor(Math.random() * allEls.length)];
-  itemSecond = allEls[Math.floor(Math.random() * allEls.length)];
-}, 2000);
+      this.clearColor = setInterval(() => {
+        const el = this.allEls[Math.floor(Math.random() * this.allEls.length)];
+        el.style.border = '';
+      }, 2000);
+    } else {
+      clearInterval(this.setColor);
+      clearInterval(this.clearColor);
+      this.allEls.forEach(el => el.style.border = '');
+    }
+  }
+}
 
-setInterval(() => {
-  colorFirst = `rgb(${randomIntegerFirst(1, 255)}, ${randomIntegerSecond(1, 255)}, ${randomIntegerThird(1, 255)})`;
-  colorSecond = `rgb(${randomIntegerFirst(1, 255)}, ${randomIntegerSecond(1, 255)}, ${randomIntegerThird(1, 255)})`;
-}, 2000);
+const backlight = new Backlight();
 
-setInterval(() => {
-  itemFirst.style.background = colorFirst;
-  itemSecond.style.background = colorSecond;
-}, 2000);
+export { backlight };
 
-setTimeout(() => {
-  itemFirst.style.background = '';
-  itemSecond.style.background = '';
-}, 2000);
+
