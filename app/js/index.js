@@ -6,12 +6,12 @@ class LoadData {}
 
 const loadData = new LoadData();
 
-window.addEventListener('hashchange', () => {
-  router.renderTemplates();
+window.addEventListener('hashchange', event => {
+  router.renderTemplates(event);
 })
 
-window.addEventListener('DOMContentLoaded', () => {
-  router.renderTemplates();
+window.addEventListener('DOMContentLoaded', event => {
+  router.renderTemplates(event);
   cartLayer.openCart('modal');
 })
 

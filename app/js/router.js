@@ -7,23 +7,23 @@ class Router {
     this.locationsHashStorage = [];
   }
 
-  renderTemplates = () => {
-    console.log('render templates')
+  renderTemplates = (event) => {
     this.locationsHashStorage.push(location.hash);
     const locationHashBefore = this.locationsHashStorage[this.locationsHashStorage.length - 2];
+    let locationHashFiltered = location.hash.split('-')[0];
+    if (locationHashFiltered === '#') locationHashFiltered = '';
+
     locationHashBefore
       ? localStorage.setItem('locationHashBefore', locationHashBefore)
       : localStorage.setItem('locationHashBefore', '#');
+
     const wrapper = document.querySelector('.wrapper');
     wrapper.innerHTML = '';
-    let locationHashFiltered = location.hash.split('-')[0];
     const templates = document.querySelectorAll('[data-template-url]');
     templates.forEach(template => {
       const content = template.content;
       const clonedLayout = content.cloneNode(content);
-      if (locationHashFiltered !== '#cart') {
-        if (template.dataset.templateUrl === locationHashFiltered) wrapper.append(clonedLayout);
-      }
+      if (template.dataset.templateUrl === locationHashFiltered) wrapper.append(clonedLayout);
     })
     switch (locationHashFiltered) {
       case '':

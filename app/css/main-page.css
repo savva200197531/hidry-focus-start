@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     right: -18px;
+    z-index: 1;
 }
 
 .filter-segment__text {

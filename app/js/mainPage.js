@@ -14,9 +14,18 @@ class MainPage {
     const filterSegmentContent = document.querySelector('.filter-segment-template').content;
     const filterSegment = filterSegmentContent.cloneNode(filterSegmentContent).querySelector('.filter-segment');
     const filterSegmentText = filterSegment.querySelector('.filter-segment__text');
-    const checkedArr = [];
     const allCheckboxes = document.querySelectorAll('.filter-block__checkbox');
+    const checkedArr = [];
     allCheckboxes.forEach((checkbox, idx) => {
+
+      // if (this.filtersByType.includes(checkbox.dataset.typeFilter)) {
+      //   checkbox.checked = true;
+      //   checkedArr.push(parseInt(checkbox.id.slice(-1)));
+      // }
+      // if (this.filtersByTraits.includes(checkbox.dataset.traitsFilter)) {
+      //   checkbox.checked = true;
+      //   checkedArr.push(parseInt(checkbox.id.slice(-1)));
+      // }
       checkbox.addEventListener('click', event => {
         const closest = event.target.closest('.filter-block__controls-wrapper');
 
@@ -47,6 +56,47 @@ class MainPage {
     });
   }
 
+  hashFilterSet = () => {
+    let hash = [];
+    if (this.filtersByType.length) {
+      hash.push('-typeFilter?');
+      this.filtersByType.forEach(filter => {
+        hash.push(`&${filter}`);
+      })
+    }
+    if (this.filtersByTraits.length) {
+      hash.push('-traitsFilter?');
+      this.filtersByTraits.forEach(filter => {
+        hash.push(`&${filter}`);
+      })
+    }
+
+    hash = Array.from(new Set(hash));
+    location.hash = hash.join('');
+  }
+
+  hashFilter = () => {
+    const filters = location.hash.split('-');
+    filters.splice(0, 1)
+    filters.forEach(filter => {
+      switch (filter.split('?')[0]) {
+        case 'typeFilter':
+          this.filtersByType = this.hashFilterFill(filter);
+          break;
+        case 'traitsFilter':
+          this.filtersByTraits = this.hashFilterFill(filter);
+          break;
+      }
+    })
+    this.itemsFilter();
+  }
+
+  hashFilterFill = (filter) => {
+    const arr = filter.split('&');
+    arr.splice(0, 1);
+    return arr;
+  }
+
   itemsFiltersFill = (checkbox, filterBy, filter) =>
     checkbox.checked
       ? filterBy.push(checkbox.dataset[filter])
@@ -66,8 +116,8 @@ class MainPage {
     getData('http://localhost:3000/data/dogs.json').then(data => {
       this.data = data;
       this.allData = data;
-      this.loadMainPage();
       this.filterChecked();
+      this.loadMainPage();
     }).catch(error => {
       console.error(error);
     })
