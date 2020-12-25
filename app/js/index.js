@@ -1,4 +1,5 @@
 import { router } from "./router.js";
+import { cartLayer } from "./cartLayer.js";
 
 class LoadData {
 }
@@ -15,6 +16,10 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('DOMContentLoaded', () => {
   console.log('dom loaded');
   router.renderTemplates();
+  cartLayer.openCart('modal');
 })
 
 export { loadData };
+
+
+// подсветка элемента (вкл/выкл), фильтр в урле

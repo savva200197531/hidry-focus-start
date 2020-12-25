@@ -4,24 +4,25 @@ import { cartLayer } from "./cartLayer.js";
 
 class Router {
   constructor() {
+    this.locationsHashStorage = [];
   }
 
   renderTemplates = () => {
     console.log('render templates')
+    this.locationsHashStorage.push(location.hash);
+    const locationHashBefore = this.locationsHashStorage[this.locationsHashStorage.length - 2];
+    locationHashBefore
+      ? localStorage.setItem('locationHashBefore', locationHashBefore)
+      : localStorage.setItem('locationHashBefore', '#');
     const wrapper = document.querySelector('.wrapper');
-    const cartOpen = document.querySelector('.cart-open');
     wrapper.innerHTML = '';
     let locationHashFiltered = location.hash.split('-')[0];
-    if (locationHashFiltered === '#cart') locationHashFiltered = `${locationHashFiltered}-cart` ;
-    cartOpen.href = '#cart';
     const templates = document.querySelectorAll('[data-template-url]');
     templates.forEach(template => {
       const content = template.content;
       const clonedLayout = content.cloneNode(content);
-      console.log(locationHashFiltered)
       if (template.dataset.templateUrl === locationHashFiltered) wrapper.append(clonedLayout);
     })
-    locationHashFiltered = location.hash.split('-')[0];
     switch (locationHashFiltered) {
       case '':
         mainPage.getData();
@@ -30,10 +31,12 @@ class Router {
         cardPage.getData();
         break;
       case '#cart':
-        cartLayer.openCart();
+        cartLayer.openCart('full');
         break;
     }
-    document.querySelector('.cart-open-counter').textContent = `(${JSON.parse(localStorage.getItem('cartData')).length})`;
+    if (JSON.parse(localStorage.getItem('cartData')))
+      document.querySelector('.cart-open-counter').textContent
+        = `(${JSON.parse(localStorage.getItem('cartData')).length})`;
   }
 }
 

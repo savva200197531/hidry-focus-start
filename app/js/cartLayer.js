@@ -1,43 +1,70 @@
-import { getData } from "./getData.js";
-
 class CartLayer {
   constructor() {
     this.data = [];
     this.cartData = [];
     this.cart = [];
     this.checkboxCount = 0;
+    this.cartOpen = '';
+    this.finalPrice = '';
+    this.declination = '';
+    this.cartDataLength = '';
   }
 
-  openCart = () => {
+  cartModal = () => {
+    this.cartOpen = document.querySelector('.cart-open');
+    const cartModalContent = document.querySelector('.cart-modal-template').content;
+    const cartModal = cartModalContent.cloneNode(cartModalContent).querySelector('.cart-modal');
+    this.cartOpen.addEventListener('mouseenter', () => this.openCartModal(cartModal));
+    this.cartOpen.addEventListener('mouseleave', () => this.closeCartModal());
+  }
+
+  openCartModal = (cartModal) => {
+    this.getCartData();
+    cartModal.querySelector('.cart-modal-count').textContent = `${this.cartDataLength} ${this.declination}`;
+    cartModal.querySelector('.cart-modal-price').textContent = this.finalPrice;
+    this.cartOpen.append(cartModal);
+  }
+
+  declOfWord = (number, words) => words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? number % 10 : 5]];
+
+  closeCartModal = () => {
+    this.cartOpen.querySelector('.cart-modal').remove();
+  }
+
+  openCart = (type) => {
     if (JSON.parse(localStorage.getItem('cartData'))) this.cartData = JSON.parse(localStorage.getItem('cartData'));
+
     const body = document.querySelector('body');
     this.cartTemplate = document.querySelector('.cart-template');
     const content = this.cartTemplate.content;
 
     const cart = content.cloneNode(content).querySelector('.cart-wrapper');
     const cartBody = cart.querySelector('.cart');
-    body.classList.add('cart-opened');
 
-    body.append(cart);
+    if (type === 'full') {
+      body.classList.add('cart-opened');
+      setTimeout(() => cartBody.classList.add('cart-open-animation'));
 
-    setTimeout(() => cartBody.classList.add('cart-open-animation'));
+      cart.addEventListener('click', event => {
+        const target = event.target.classList.value
+        if (target.includes('cart-wrapper') || target.includes('cart-close')) {
+          location.hash = localStorage.getItem('locationHashBefore');
+          cartBody.classList.remove('cart-open-animation');
+          setTimeout(() => {
+            cart.remove();
+            body.classList.remove('cart-opened');
+          }, 600);
+        }
+      });
 
-    cart.addEventListener('click', event => {
-      const target = event.target.classList.value
-      if (target.includes('cart-wrapper') || target.includes('cart-close')) {
-        location.hash = '#'
-        cartBody.classList.remove('cart-open-animation');
-        // cartBody.addEventListener('transitionend', () => {cart.remove(); body.classList.remove('cart-opened');});
-        setTimeout(() => {
-          cart.remove();
-          body.classList.remove('cart-opened');
-        }, 600);
-      }
-    });
+      body.append(cart);
+
+      const allCheckboxes = cartBody.querySelectorAll('input');
+      allCheckboxes.forEach(element => element.addEventListener('click', event => this.productCheckboxes(event, allCheckboxes)));
+      cartBody.querySelector('.cart-top__delete-wrapper').addEventListener('click', () => this.deleteAllProducts())
+    }
+
     this.renderCart();
-    const allCheckboxes = cartBody.querySelectorAll('input');
-    allCheckboxes.forEach(element => element.addEventListener('click', event => this.productCheckboxes(event, allCheckboxes)));
-    cartBody.querySelector('.cart-top__delete-wrapper').addEventListener('click', () => this.deleteAllProducts())
   }
 
   productCheckboxes = (event, allCheckboxes) => {
@@ -109,23 +136,23 @@ class CartLayer {
     document.querySelector('.cart-open-counter').textContent = `(${JSON.stringify(this.cartData.length)})`;
   }
 
+  getCartData = () => {
+    this.finalPrice = `${this.cartData.reduce((prev, curr) => (curr.price * curr.quantity) + prev, 0).toLocaleString()}₽`;
+    this.declination = this.declOfWord(JSON.stringify(this.cartData.length), ['товар', 'товара', 'товаров']);
+    this.cartDataLength = JSON.stringify(this.cartData.length);
+  }
   renderCart = () => {
+    this.getCartData();
     const cartProducts = document.querySelector('.cart-products');
-    if (cartProducts) {
+    if (!cartProducts) {
+      this.cartModal();
+    } else {
       cartProducts.innerHTML = '';
       const cartRowTemplate = document.querySelector('.cart-row-template');
       const cartRowContent = cartRowTemplate.content;
 
       this.cartData.forEach(item => {
-
         const cartRowCloned = cartRowContent.cloneNode(cartRowContent);
-        // // const productImg = cartRowCloned.querySelector('.cart-row__img');
-        // // const productName = cartRowCloned.querySelector('.cart-row__text');
-        // // const productCount = cartRowCloned.querySelector('.card-row__count');
-        // // const productPrice = cartRowCloned.querySelector('.cart-row__price');
-        // cart-checkbox1 id
-        // cart-checkbox1 id
-
         cartRowCloned.querySelector('.cart-row__img').src = item.img;
         cartRowCloned.querySelector('.cart-row__text').textContent = item.name;
         cartRowCloned.querySelector('.card-row__count').textContent = item.quantity;
@@ -138,9 +165,8 @@ class CartLayer {
 
         cartProducts.append(cartRowCloned);
       })
-
-      document.querySelector('.cart-price__count').textContent = JSON.stringify(this.cartData.length);
-      document.querySelector('.cart-price__price').textContent = this.cartData.reduce((prev, curr) => (curr.price * curr.quantity) + prev, 0);
+      document.querySelector('.cart-price__count').textContent = this.cartDataLength;
+      document.querySelector('.cart-price__price').textContent = this.finalPrice;
     }
   }
 

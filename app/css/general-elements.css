@@ -34,7 +34,7 @@
     justify-content: space-between;
     height: 54px;
     flex-wrap: wrap;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .nav__item {

@@ -62,8 +62,8 @@
                                 <h5>Акции</h5>
                             </a>
                         </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link hover active cart-open">
+                        <li class="nav__item cart-open">
+                            <a href="#cart" class="nav__link hover active">
                                 <svg class="nav__img">
                                     <use xlink:href="assets/img/nav.svg#house"></use>
                                 </svg>
@@ -370,6 +370,15 @@
     </div>
 </template>
 <!--cart product template-->
+
+<!--cart modal template-->
+<template class="cart-modal-template">
+    <div class="cart-modal">
+        <h3 class="cart-modal-title">В корзине <span class="cart-modal-count"></span></h3>
+        <p class="cart-modal-text">На сумму <span class="cart-modal-price"></span></p>
+    </div>
+</template>
+<!--cart modal template-->
 
 <!--other templates-->
 
